@@ -1,0 +1,6 @@
+.husky
+build
+node_modules
+.jest-test.results.json
+package-lock.json
+__mocks__

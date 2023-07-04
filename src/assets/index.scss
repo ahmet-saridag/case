@@ -1,0 +1,19 @@
+// Reset Scss
+@import url('./scss/global/reset.scss');
+
+// Sizing
+@import url('./scss/global/em.scss');
+@import url('./scss/global/font-sizing.scss');
+
+// Colors 
+@import url('./scss/global/colors.scss');
+
+// Mixins
+@import url('./scss/mixins/breakpoint.scss');
+@import url('./scss/mixins/line-cta.scss');
+
+// Components
+
+.red {
+  background-color: red;
+}
