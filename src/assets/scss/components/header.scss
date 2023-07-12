@@ -1,0 +1,123 @@
+$white: #fff;
+$dark: #400e03;
+$dark-grey: #525252;
+
+// Mobile
+$screen-mobile-min: 320px;
+
+// Tablet
+$screen-tablet-max: 1023px;
+
+// Small Desktop
+$screen-small-desktop-min: 1024px;
+$screen-small-desktop-max: 1199px;
+
+@mixin mobile_and_tablet {
+  @media (min-width: #{$screen-mobile-min}) and (max-width: #{$screen-tablet-max}) {
+    @content;
+  }
+}
+
+@mixin small_desktop {
+  @media (min-width: #{$screen-small-desktop-min}) and (max-width: #{$screen-small-desktop-max}) {
+    @content;
+  }
+}
+
+.header {
+  width: 100%;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+  background-color: $white;
+
+  @include mobile_and_tablet {
+    padding: 0 16px 0 21px;
+  }
+
+  &__logo {
+    &-img {
+      height: 44px;
+
+      @include mobile_and_tablet {
+        height: 37px;
+      }
+    }
+  }
+
+  &__nav {
+    &-desktop {
+      display: flex;
+
+      @include mobile_and_tablet {
+        display: none;
+      }
+    }
+
+    &-mobile {
+      display: none;
+
+      @include mobile_and_tablet {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        background-color: $dark;
+        top: 60px;
+        left: 0;
+        z-index: 10;
+      }
+    }
+  }
+
+  &__mobile {
+    &-menu {
+      display: none;
+
+      @include mobile_and_tablet {
+        display: flex;
+      }
+    }
+  }
+
+  &__link {
+    margin-right: 40px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include small_desktop {
+      margin-right: 20px;
+    }
+
+    &-mobile {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid $dark-grey;
+    }
+
+    &-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: $dark;
+      cursor: pointer;
+
+      &-mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $white;
+        height: 72px;
+        width: 100%;
+        padding: 0 24px;
+      }
+    }
+  }
+}

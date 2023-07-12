@@ -1,0 +1,77 @@
+$white: #fff;
+$red: #ed1c24;
+
+// Mobile
+$screen-mobile-min: 320px;
+
+// Tablet
+$screen-tablet-max: 1023px;
+
+@mixin mobile_and_tablet {
+  @media (min-width: #{$screen-mobile-min}) and (max-width: #{$screen-tablet-max}) {
+    @content;
+  }
+}
+
+.banner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 465px;
+  background-image: url('../../public/banner/banner-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  @include mobile_and_tablet {
+    height: 375px;
+    background-image: url('../../public/banner/banner-background-mobile.jpg');
+  }
+
+  &__overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.24);
+  }
+
+  &__content {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 56px;
+    font-weight: 700;
+    color: $white;
+    width: 90%;
+    text-align: center;
+
+    @include mobile_and_tablet {
+      width: 95%;
+      font-size: 38px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    padding: 16px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: $red;
+    background-color: $white;
+    margin-top: 30px;
+    font-size: 16px;
+
+    @include mobile_and_tablet {
+      margin-top: 24px;
+      font-size: 12px;
+    }
+  }
+}

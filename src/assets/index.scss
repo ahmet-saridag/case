@@ -5,7 +5,7 @@
 @import url('./scss/global/em.scss');
 @import url('./scss/global/font-sizing.scss');
 
-// Colors 
+// Colors
 @import url('./scss/global/colors.scss');
 
 // Mixins
@@ -13,7 +13,8 @@
 @import url('./scss/mixins/line-cta.scss');
 
 // Components
-
-.red {
-  background-color: red;
-}
+@import url('./scss/components/button.scss');
+@import url('./scss/components/banner.scss');
+@import url('./scss/components/header.scss');
+@import url('./scss/components/products.scss');
+@import url('./scss/components/videos.scss');

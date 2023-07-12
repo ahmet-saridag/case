@@ -1,7 +1,7 @@
 import Header from '../components/common/Header';
 import Banner from '../components/v1/Banner';
-import Videos from '../components/v1/Videos';
 import Products from '../components/v1/Products';
+import Videos from '../components/v1/Videos';
 
 function App() {
   return (

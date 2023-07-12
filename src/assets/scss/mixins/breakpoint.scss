@@ -1,3 +1,7 @@
+$white: #fff;
+$dark: #400e03;
+$dark-grey: #525252;
+
 // Mobile
 $screen-mobile-min: 320px;
 $screen-mobile-max: 767px;
@@ -25,8 +29,20 @@ $screen-large-desktop-min: 1200px;
   }
 }
 
+@mixin mobile_and_tablet {
+  @media (min-width: #{$screen-mobile-min}) and (max-width: #{$screen-tablet-max}) {
+    @content;
+  }
+}
+
 @mixin small_desktop {
   @media (min-width: #{$screen-small-desktop-min}) and (max-width: #{$screen-small-desktop-max}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$screen-small-desktop-min}) {
     @content;
   }
 }

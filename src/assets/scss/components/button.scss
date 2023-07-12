@@ -1,0 +1,28 @@
+$white: #fff;
+$red: #ed1c24;
+
+$screen-mobile-min: 320px;
+$screen-tablet-max: 1023px;
+
+@mixin mobile_and_tablet {
+  @media (min-width: #{$screen-mobile-min}) and (max-width: #{$screen-tablet-max}) {
+    @content;
+  }
+}
+
+.white-button {
+  display: flex;
+  padding: 16px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: $red;
+  background-color: $white;
+  margin-top: 30px;
+  font-size: 16px;
+
+  @include mobile_and_tablet {
+    margin-top: 24px;
+    font-size: 12px;
+  }
+}
